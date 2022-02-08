@@ -17,6 +17,9 @@ for run in runs:
     run.scheduled_at = None
     run.finished_at = None
     run.total_run_time = None
+    run.context = None
+    run.machine_info = None
+    run.conda_packages = None
     run.save()
 
 # Resend slack notifications and update Pull Request comments associated with failed runs

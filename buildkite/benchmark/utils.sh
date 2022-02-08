@@ -21,7 +21,6 @@ create_conda_env_for_arrow_commit() {
   compilers \
   python="${PYTHON_VERSION}" \
   pandas \
-  aws-sdk-cpp=$aws_sdk_version \
   r
 
   source dev/conbench_envs/hooks.sh activate_conda_env_for_benchmark_build
