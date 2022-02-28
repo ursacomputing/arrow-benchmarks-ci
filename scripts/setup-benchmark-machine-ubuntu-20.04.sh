@@ -106,7 +106,6 @@ echo "buildkite-agent ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 echo "Done"
 
 echo "-------Installing conda"
-su - buildkite-agent
 case $( uname -m ) in
   aarch64)
     conda_installer=Miniconda3-latest-Linux-aarch64.sh;;
@@ -114,6 +113,5 @@ case $( uname -m ) in
     conda_installer=Miniconda3-latest-Linux-x86_64.sh;;
 esac
 curl -LO https://repo.anaconda.com/miniconda/$conda_installer
-bash $conda_installer -b -p "$HOME/miniconda3"
-"$HOME/miniconda3/bin/conda" init bash
-exit
+bash $conda_installer -b -p "/var/lib/buildkite-agent/miniconda3"
+su - buildkite-agent -c "/var/lib/buildkite-agent/miniconda3/bin/conda init bash"
