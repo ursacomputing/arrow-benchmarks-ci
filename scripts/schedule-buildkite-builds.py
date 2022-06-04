@@ -6,8 +6,8 @@ from integrations.buildkite import buildkite
 
 pipeline_name = "arrow-bci-benchmark-on-ec2-m5-4xlarge-us-east-2"
 machine = "ec2-m5-4xlarge-us-east-2"
-commit = "HEAD"
-branch = "main"
+commit = "c82f80ad76bf80c7be28a2a0183b9e667fc89e5b"  # 10 iterations
+branch = "elena/research-python-and-r-benchmarks-with-interations-10-and-15"
 message = "test"
 filters = {
             "langs": {
