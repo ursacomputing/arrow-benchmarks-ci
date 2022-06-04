@@ -3,12 +3,21 @@ from utils import generate_uuid
 
 from integrations.buildkite import buildkite
 
+"""
+To run this script:
+cd ~/arrow-benchmarks-ci
+
+export BUILDKITE_API_BASE_URL=https://api.buildkite.com
+export BUILDKITE_API_TOKEN=...
+export BUILDKITE_ORG=apache-arrow
+
+python -m scripts.schedule-buildkite-builds
+"""
+
 
 pipeline_name = "arrow-bci-benchmark-on-ec2-m5-4xlarge-us-east-2"
 machine = "ec2-m5-4xlarge-us-east-2"
-commit = "c82f80ad76bf80c7be28a2a0183b9e667fc89e5b"  # 10 iterations
 branch = "elena/research-python-and-r-benchmarks-with-interations-10-and-15"
-message = "test"
 filters = {
             "langs": {
                 "R": {
@@ -46,4 +55,16 @@ env = {
     "PYTHON_VERSION": "3.8",
 }
 
-print(buildkite.create_build(pipeline_name, commit, branch, message, env))
+# 10 iterations
+commit = "c82f80ad76bf80c7be28a2a0183b9e667fc89e5b"
+message = "10 iterations"
+env["RUN_ID"] = generate_uuid()
+env["RUN_NAME"] = f"experiment {message}"
+buildkite.create_build(pipeline_name, commit, branch, message, env)
+
+# 15 iterations
+commit = "851ea8c01019e4e1572d12e71b757cf929f8c056"
+message = "15 iterations"
+env["RUN_ID"] = generate_uuid()
+env["RUN_NAME"] = f"experiment {message}"
+buildkite.create_build(pipeline_name, commit, branch, message, env)
