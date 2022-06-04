@@ -28,10 +28,10 @@ repos_with_benchmark_groups = [
         "benchmarkable_type": "arrow-commit",
         "repo": "https://github.com/ursacomputing/benchmarks.git",
         "root": "benchmarks",
-        "branch": "main",
+        "branch": "elena/benchmarks-json-with-10-15-iterations",
         "setup_commands": ["python setup.py develop"],
-        "path_to_benchmark_groups_list_json": "benchmarks/benchmarks.json",
-        "url_for_benchmark_groups_list_json": "https://raw.githubusercontent.com/ursacomputing/benchmarks/main/benchmarks.json",
+        "path_to_benchmark_groups_list_json": "benchmarks/benchmarks10.json",
+        "url_for_benchmark_groups_list_json": "https://raw.githubusercontent.com/ursacomputing/benchmarks/main/benchmarks10.json",
         "setup_commands_for_lang_benchmarks": {  # These commands need to be defined as functions in buildkite/benchmark/utils.sh
             "C++": ["install_archery"],
             "Python": ["create_data_dir"],
