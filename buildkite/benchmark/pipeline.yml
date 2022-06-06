@@ -1,4 +1,3 @@
 steps:
   - label: "Run Benchmarks"
     command: source buildkite/benchmark/utils.sh create_conda_env_and_run_benchmarks
-    timeout_in_minutes: 360
