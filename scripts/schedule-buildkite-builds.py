@@ -57,7 +57,7 @@ env = {
 
 for i in range(6):
     # 10 iterations
-    commit = "c82f80ad76bf80c7be28a2a0183b9e667fc89e5b"
+    commit = "eb40eb6107c0db8f02e38b53d6dfe2ea4274a71c"
     message = "10 iterations"
     env["RUN_ID"] = generate_uuid()
     env["RUN_NAME"] = f"experiment {message} run {i+1}"
