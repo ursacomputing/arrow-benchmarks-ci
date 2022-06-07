@@ -56,16 +56,23 @@ env = {
 }
 
 for i in range(6):
-    # 10 iterations
-    commit = "eb40eb6107c0db8f02e38b53d6dfe2ea4274a71c"
-    message = "10 iterations"
-    env["RUN_ID"] = generate_uuid()
-    env["RUN_NAME"] = f"experiment {message} run {i+1}"
-    buildkite.create_build(pipeline_name, commit, branch, message, env)
+    # # 10 iterations
+    # commit = "eb40eb6107c0db8f02e38b53d6dfe2ea4274a71c"
+    # message = "10 iterations"
+    # env["RUN_ID"] = generate_uuid()
+    # env["RUN_NAME"] = f"experiment {message} run {i+1}"
+    # buildkite.create_build(pipeline_name, commit, branch, message, env)
+    #
+    # # 15 iterations
+    # commit = "73ad5ac352450f5a660ca10169a92e5ed3bea780"
+    # message = "15 iterations"
+    # env["RUN_ID"] = generate_uuid()
+    # env["RUN_NAME"] = f"experiment {message} run {i+1}"
+    # buildkite.create_build(pipeline_name, commit, branch, message, env)
 
-    # 15 iterations
-    commit = "73ad5ac352450f5a660ca10169a92e5ed3bea780"
-    message = "15 iterations"
+    # 3 iterations
+    commit = "081f2f9ac716198cea6396bf9468f79e15116637"
+    message = "3 iterations"
     env["RUN_ID"] = generate_uuid()
-    env["RUN_NAME"] = f"experiment {message} run {i+1}"
+    env["RUN_NAME"] = f"experiment {message} run {i + 1}"
     buildkite.create_build(pipeline_name, commit, branch, message, env)
